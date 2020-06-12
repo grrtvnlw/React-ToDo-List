@@ -1,0 +1,19 @@
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h3 {
+  margin-top: 20px;
+}
+
+.addTask {
+  display: flex;
+  align-items: center;
+}
+
+Button {
+  margin-left: 10px;
+}
