@@ -40,6 +40,22 @@ class App extends React.Component {
     })
   }
 
+  completeTask = (index) => {
+    let newTodos = {...this.state.todos};
+    newTodos[index].complete = true;
+    this.setState({
+      newTodos
+    })
+  }
+
+  uncompleteTask = (index) => {
+    let newTodos = {...this.state.todos};
+    newTodos[index].complete = false;
+    this.setState({
+      newTodos
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -50,9 +66,9 @@ class App extends React.Component {
         <h3>My Tasks</h3>
         <ul>
           { this.state.todos.map((todo, index) => {
-            if (todo.complete === true) {
+            if (todo.complete === false) {
               return (
-                <li key={ index }>{ todo.name }<Button id={ index } className="btn btn-secondary p-1">Done</Button><Button id={ index } className="btn btn-danger p-1" onClick={ this.removeElement.bind(this, index) }>Remove</Button></li>
+                <li key={ index }>{ todo.name }<Button id={ index } className="btn btn-secondary p-1" onClick={ this.completeTask.bind(this, index) }>Done</Button><Button className="btn btn-danger p-1" onClick={ this.removeElement.bind(this, index) }>Remove</Button></li>
               )
             }
             return;
@@ -61,9 +77,9 @@ class App extends React.Component {
         <h3>Complete Tasks</h3>
         <ul>
           { this.state.todos.map((todo, index) => {
-            if (todo.complete === false) {
+            if (todo.complete === true) {
               return (
-                <li key={ index }>{ todo.name }<Button id={ index } className="btn btn-secondary p-1">Not Done</Button><Button id={ index } className="btn btn-danger p-1" onClick={ this.removeElement.bind(this, index) }>Remove</Button></li>
+                <li key={ index } className='strike'>{ todo.name }<Button id={ index } className="btn btn-secondary p-1" onClick={ this.uncompleteTask.bind(this, index) }>Not Done</Button><Button className="btn btn-danger p-1" onClick={ this.removeElement.bind(this, index) }>Remove</Button></li>
               )
             }
             return;

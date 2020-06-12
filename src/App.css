@@ -51,3 +51,7 @@ ul li {
 .App h3 {
   margin-top: 20px;
 }
+
+.strike {
+  text-decoration: line-through;
+}
