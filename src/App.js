@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import ToDo from './components/ToDo';
 // import completeTasks from './components/completeTasks';
 import { Button, Col, Row } from 'react-bootstrap'
+import { connect } from 'react-redux';
 
 class App extends React.Component {
   constructor() {
@@ -63,6 +64,7 @@ class App extends React.Component {
           <h1>Todo List</h1>
         </header>
         <ToDo onFormSubmit={ this.onFormSubmit }/>
+        {/* <TaskList></TaskList> */}
         <h3>My Tasks</h3>
         <ul>
           { this.state.todos.map((todo, index) => {
@@ -91,3 +93,14 @@ class App extends React.Component {
 }
 
 export default App;
+
+// const mapStateToProps = (state) => {
+//   return {
+//     tasks: state.tasks
+//   }
+// }
+
+// export default connect(
+//   mapStateToProps,
+//   null
+// )(TaskList)

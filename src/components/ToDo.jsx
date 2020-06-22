@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Button, Col, Row } from 'react-bootstrap'
 import './ToDo.css';
 
+import { connect } from 'react-redux';
+
 export default class ToDo extends Component {
   constructor(props) {
     super(props);
