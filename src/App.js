@@ -68,7 +68,7 @@ class App extends React.Component {
           { this.state.todos.map((todo, index) => {
             if (todo.complete === false) {
               return (
-                <li key={ index }>{ todo.name }<Button id={ index } className="btn btn-secondary p-1" onClick={ this.completeTask.bind(this, index) }>Done</Button><Button className="btn btn-danger p-1" onClick={ this.removeElement.bind(this, index) }>Remove</Button></li>
+                <li key={ index }>{ todo.name }<Button className="btn btn-secondary p-1" onClick={ this.completeTask.bind(this, index) }>Done</Button><Button className="btn btn-danger p-1" onClick={ this.removeElement.bind(this, index) }>Remove</Button></li>
               )
             }
             return;
@@ -79,7 +79,7 @@ class App extends React.Component {
           { this.state.todos.map((todo, index) => {
             if (todo.complete === true) {
               return (
-                <li key={ index } className='strike'>{ todo.name }<Button id={ index } className="btn btn-secondary p-1" onClick={ this.uncompleteTask.bind(this, index) }>Not Done</Button><Button className="btn btn-danger p-1" onClick={ this.removeElement.bind(this, index) }>Remove</Button></li>
+                <li key={ index } className='strike'>{ todo.name }<Button className="btn btn-secondary p-1" onClick={ this.uncompleteTask.bind(this, index) }>Not Done</Button><Button className="btn btn-danger p-1" onClick={ this.removeElement.bind(this, index) }>Remove</Button></li>
               )
             }
             return;
